@@ -1,0 +1,16 @@
+{
+  "name": "cog-example",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9",
+    "vite-plugin-cesium": "^1.2.22"
+  },
+  "dependencies": {
+    "cesium": "1.100.0",
+    "tiff-imagery-provider": "^2.6.3"
+  }
+}
