@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "cesium": "1.100.0",
-    "tiff-imagery-provider": "^2.6.3"
-  }
+    "tiff-imagery-provider": "latest"
+  },
+  "license": "MIT"
 }
