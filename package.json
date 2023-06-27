@@ -10,7 +10,8 @@
     "vite-plugin-cesium": "^1.2.22"
   },
   "dependencies": {
-    "cesium": "1.100.0",
+    "cesium": "^1.106.1",
+    "proj4-fully-loaded": "^0.2.0",
     "tiff-imagery-provider": "latest"
   },
   "license": "MIT"

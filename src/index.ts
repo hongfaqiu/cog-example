@@ -1,6 +1,7 @@
 import { ArcGisMapServerImageryProvider, Viewer } from 'cesium';
 import './index.css';
 import TIFFImageryProvider from 'tiff-imagery-provider';
+import proj4 from 'proj4-fully-loaded'; 
 
 const viewer = new Viewer('cesiumContainer', {
   baseLayerPicker: false,
@@ -30,7 +31,17 @@ const provider: any = await TIFFImageryProvider.fromUrl('./cogtif.tif', {
       colorScale: 'rainbow'
     }
   },
-  enablePickFeatures: true
+  enablePickFeatures: true,
+  projFunc: (code) => {
+    if (![4326].includes(code)) {
+      try {
+        let prj = proj4(`EPSG:${code}`, "EPSG:4326")
+        if (prj) return prj.forward
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  },
 });
 
 const imageryLayer = viewer.imageryLayers.addImageryProvider(provider);
