@@ -1,5 +1,6 @@
 {
   "name": "cog-example",
+  "private": true,
   "scripts": {
     "start": "vite",
     "build": "vite build"
@@ -12,7 +13,7 @@
   "dependencies": {
     "cesium": "^1.106.1",
     "proj4-fully-loaded": "^0.2.0",
-    "tiff-imagery-provider": "latest"
+    "tiff-imagery-provider": "^2.7.0"
   },
   "license": "MIT"
 }
