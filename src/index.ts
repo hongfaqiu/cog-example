@@ -22,23 +22,28 @@ ArcGisMapServerImageryProvider.fromUrl('https://services.arcgisonline.com/ArcGIS
 }).then(async imageryProvider => {
   viewer.imageryLayers.remove(viewer.imageryLayers.get(0));
   viewer.imageryLayers.addImageryProvider(imageryProvider)
-  const provider: any = await TIFFImageryProvider.fromUrl('https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/56/J/NP/2023/4/S2A_56JNP_20230410_0_L2A/TCI.tif', {
+  const provider: any = await TIFFImageryProvider.fromUrl('/cogtif.tif', {
     enablePickFeatures: true,
+    renderOptions: {
+      single: {
+        colorScale: 'rainbow',
+      }
+    },
     projFunc: (code) => {
-      if (![4326].includes(code)) {
+      if (![4326, 3857, 900913].includes(code)) {
         {
           try {
-            let prj = proj4(`EPSG:${code}`, "EPSG:4326")
-            let unprj = proj4("EPSG:4326", `EPSG:${code}`)
-            if (prj && unprj) return {
+            let prj = proj4("EPSG:4326", `EPSG:${code}`,)
+            if (prj) return {
               project: prj.forward,
-              unproject: unprj.forward
+              unproject: prj.inverse
             }
           } catch (e) {
             console.error(e);
           }
         }
       }
+      return undefined
     },
   });
 
