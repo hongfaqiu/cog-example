@@ -20,7 +20,7 @@ const viewer = new Viewer('cesiumContainer', {
   orderIndependentTranslucency: false,
 });
 
-const provider: any = await TIFFImageryProvider.fromUrl('/cogtif.tif', {
+TIFFImageryProvider.fromUrl('/cogtif.tif', {
   enablePickFeatures: true,
   renderOptions: {
     single: {
@@ -43,9 +43,10 @@ const provider: any = await TIFFImageryProvider.fromUrl('/cogtif.tif', {
     }
     return undefined
   },
-});
-console.log(provider);
-const imageryLayer = viewer.imageryLayers.addImageryProvider(provider);
-viewer.flyTo(imageryLayer, {
-  duration: 1,
-});
+}).then((provider: any) => {
+  console.log(provider);
+  const imageryLayer = viewer.imageryLayers.addImageryProvider(provider);
+  viewer.flyTo(imageryLayer, {
+    duration: 1,
+  });
+})
