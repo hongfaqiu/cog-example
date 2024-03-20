@@ -666,10 +666,10 @@ statuses@2.0.1:
   resolved "https://registry.npmmirror.com/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"
   integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
 
-tiff-imagery-provider@^2.10.2:
-  version "2.10.2"
-  resolved "https://registry.npmjs.org/tiff-imagery-provider/-/tiff-imagery-provider-2.10.2.tgz#cc45ee6d7e0feec54104d14250e9ee84c39218a8"
-  integrity sha512-7tbG/9myRXJgsND8ra2YRKBfpbYrkvny5FwO91UfBAIotay5NY/lk0D/2xORu7xBQI9k4w7uosokUOCovI2x4A==
+tiff-imagery-provider@^2.10.4:
+  version "2.10.4"
+  resolved "https://registry.npmmirror.com/tiff-imagery-provider/-/tiff-imagery-provider-2.10.4.tgz#d87dd2a12f73c137f1601a22a03d2fc852755dc1"
+  integrity sha512-eeDJdhd/nuc20IIyeXmpOIvN+ILKDDqdpU9Crw7JhrPiV7ETUIJTcjwBF5ML6X2KUmzGIixkqWrnI0KpM2i3wg==
   dependencies:
     geotiff "^2.0.7"
 
